@@ -27,8 +27,24 @@ The following device-specific S-protocol manuals can be found on the Brooks Inst
 3. Initialize the appropriate class—Mass Flow Controller (mfc), Mass Flow Meter (mfm), or Pressure Controller (pc). 
 4. Pass in the com port that is connected to the device along with the baudrate. Note that the default baudrate is 19200. Alternately, a serial connection can be passed for the initialization instead.
 5. To begin communicating, the address of the unit is necessary. This can be set in two different ways. 
--   Call the get_long_address method. This is recommended.
+-   Call the get_address method. This is recommended.
+```
+From sprotocol import device
+
+gf40 = device.mfc('COM10') 
+gf40.get_address()
+
+gf40.read_flow_rate()
+```
 - 	Set the long_frame_address property to the device address. This will be a bytearray consisting of five elements. See the S-Protocol device manual for more information.  
+```
+From sprotocol import device
+
+gf40 = device.mfc('COM10') 
+gf40.long_frame_address = bytearray(b'\x8aZ\xe7wI')
+
+gf40.read_flow_rate()
+```
 6.	Once the address is known by the unit, commands can be sent. 
 7.	The following commands are supported by each device type. The command number is noted below. The command number can be used to reference the S protocol device manual for the relevant unit. Note that if the baudrate is changed, communications will be lost and the class will need to be reinitialized.
 #### Commands supported by device.
