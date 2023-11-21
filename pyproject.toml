@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sprotocol"
-version = "0.0.2"
+version = "0.0.3"
 description = "For interfacing with Brooks Instrument Mass Flow Controllers, Meters, and Pressure Controllers with S-Protocol over RS-485."
 authors = ["Darren Weinhold"]
 license = "MIT"
