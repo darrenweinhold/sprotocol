@@ -12,6 +12,18 @@ $ pip install sprotocol
 
 This package is written for interfacing with Brooks Instrument devices using S-Protocol. S-Protocol is a proprietary protocol based on HART communications utilizing RS-485. 
 
+'''
+from sprotocol import mfc, mfm, pc
+
+device = mfc('COM10')
+device.get_address()
+
+device.read_flow_rate()
+
+device.write_setpoint(10)
+
+'''
+
 ### Disclaimer and Overview
 This module is intended to ease setting up and utilizing S protocol communications over RS-485 with Brooks Instrument devices. This module is provided for free and is currently in beta. Feedback is welcome and requested features as well as bug fixes will be added over time. It is recommended to review the S-protocol manual for the appropriate device.
 
