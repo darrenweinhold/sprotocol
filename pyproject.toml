@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sprotocol"
-version = "0.0.1"
+version = "0.0.2"
 description = "For interfacing with Brooks Instrument Mass Flow Controllers, Meters, and Pressure Controllers with S-Protocol over RS-485."
 authors = ["Darren Weinhold"]
 license = "MIT"
@@ -8,6 +8,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.09"
+pyserial = "^3.5"
 
 [tool.poetry.dev-dependencies]
 
